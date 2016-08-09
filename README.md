@@ -8,7 +8,6 @@ Support banner,Intersitial,native express ads,Support ios and android
 #### Display firebase Admob Banner  in as3 
 ```
     Admob.getInstance().showBanner("your banner id",AdmobSize.BANNER_320x50,AdmobPosition.BOTTOM_CENTER);
-
 ```
 The AdmobPosition class specifies where to place the banner. AdmobSize specifies witch size banner to show
 
@@ -31,7 +30,6 @@ AdSize is the value you set in apps.admob.com
 ```
     Admob.getInstance().hideNativeBanner();
 ```
-
 #### Show multi banner or native banner at same screen.
 if you want to show multi banner at same screen ,set the name of banner as follow.
 
@@ -46,8 +44,7 @@ if you want to show multi banner at same screen ,set the name of banner as follo
     Admob.getInstance().cacheInterstitial("interstitial id"); 
 ```
 interstitials need to be loaded before shown. show at an appropriate     
-stopping point in your app, check that the interstitail is ready before     
-showing it:
+stopping point in your app, check that the interstitail is ready before showing it:
 ```
     if (Admob.getInstance().isInterstitialReady()) {
       Admob.getInstance().showInterstitial();
@@ -57,7 +54,7 @@ showing it:
 set Admob target param such as test Ads and children app     
 If you want to test the ads or the your app with children target,you can set with admob ANE easy     
 ```
-        extraParam=new ExtraParameter();
+	extraParam=new ExtraParameter();
 	extraParam.testDeviceID="true";
 	extraParam.isChildApp=true;
 	Admob.getInstance().showBanner("banner ID",AdmobSize.BANNER_320x50,AdmobPosition.BOTTOM_CENTER,80,extraParam);
@@ -65,7 +62,7 @@ If you want to test the ads or the your app with children target,you can set wit
 ####  Handle admob events
 Firebase admob ane supports all admob native event,you can handle as following
 ```
-        Admob.getInstance().addEventListener(AdmobEvent.onInterstitialReceive, onAdEvent);
+	Admob.getInstance().addEventListener(AdmobEvent.onInterstitialReceive, onAdEvent);
 	private function onAdEvent(event:AdmobEvent):void
 	{
 		if (event.type == AdmobEvent.onBannerReceive)
@@ -110,9 +107,5 @@ NSAppTransportSecurity is required for ios 9,to allow http request,it is require
     </android>
 ```
 
-```
-
 ####  ANE ID
-```
-<extensionID>com.google.firebase.admob</extensionID>
-```
+        <extensionID>com.google.firebase.admob</extensionID>
